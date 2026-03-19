@@ -1,11 +1,11 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
+import sunCharacter from "@/assets/sun-character.png";
 
 const AnimatedNumber = ({ value }: { value: number }) => {
   const [current, setCurrent] = useState(0);
   useEffect(() => {
-    let start = 0;
     const duration = 1200;
     const startTime = performance.now();
     const step = (now: number) => {
@@ -37,15 +37,18 @@ const Dashboard = () => {
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.4, ease: [0.2, 0, 0, 1] }}
       >
-        {/* Header */}
+        {/* Header with sun character */}
         <div className="flex items-center justify-between mb-10">
-          <div>
-            <h1 className="font-display text-2xl font-semibold tracking-[-0.02em]">
-              Good morning, Alex.
-            </h1>
-            <p className="text-muted-foreground text-sm mt-1">
-              You're 12% more confident than last week.
-            </p>
+          <div className="flex items-center gap-4">
+            <img src={sunCharacter} alt="YourPitch mascot" className="w-12 h-12" />
+            <div>
+              <h1 className="font-display text-2xl font-semibold tracking-[-0.02em]">
+                Good morning, Alex.
+              </h1>
+              <p className="text-muted-foreground text-sm mt-1">
+                You're 12% more confident than last week.
+              </p>
+            </div>
           </div>
           <button
             onClick={() => navigate("/progress")}
@@ -57,21 +60,21 @@ const Dashboard = () => {
 
         {/* Metrics */}
         <div className="grid grid-cols-3 gap-3 mb-10">
-          <div className="momentum-card p-5 rounded-lg">
+          <div className="momentum-card p-5 rounded-xl">
             <p className="text-xs text-muted-foreground font-medium uppercase tracking-wide mb-1">Confidence Score</p>
             <p className="text-3xl font-display font-bold text-foreground">
               <AnimatedNumber value={78} />
             </p>
           </div>
-          <div className="momentum-card p-5 rounded-lg">
+          <div className="momentum-card p-5 rounded-xl">
             <p className="text-xs text-muted-foreground font-medium uppercase tracking-wide mb-1">Sessions</p>
             <p className="text-3xl font-display font-bold text-foreground">
               <AnimatedNumber value={24} />
             </p>
           </div>
-          <div className="momentum-card p-5 rounded-lg">
+          <div className="momentum-card p-5 rounded-xl">
             <p className="text-xs text-muted-foreground font-medium uppercase tracking-wide mb-1">Trend</p>
-            <p className="text-3xl font-display font-bold text-accent">
+            <p className="text-3xl font-display font-bold text-primary">
               +<AnimatedNumber value={4} />.2%
             </p>
           </div>
@@ -85,7 +88,7 @@ const Dashboard = () => {
               key={p.id}
               onMouseEnter={() => setHoveredId(p.id)}
               onMouseLeave={() => setHoveredId(null)}
-              className="momentum-card momentum-card-hover rounded-lg px-5 py-4 flex items-center justify-between cursor-pointer"
+              className="momentum-card momentum-card-hover rounded-xl px-5 py-4 flex items-center justify-between cursor-pointer"
               onClick={() => navigate("/simulation")}
             >
               <div>
@@ -95,7 +98,7 @@ const Dashboard = () => {
               <motion.button
                 initial={{ opacity: 0 }}
                 animate={{ opacity: hoveredId === p.id ? 1 : 0 }}
-                className="px-4 py-1.5 rounded-md bg-primary text-primary-foreground text-xs font-medium"
+                className="px-4 py-1.5 rounded-lg bg-primary text-primary-foreground text-xs font-medium"
               >
                 Start
               </motion.button>
