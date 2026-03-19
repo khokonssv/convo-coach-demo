@@ -1,4 +1,3 @@
-import appBackground from "@/assets/app-background.png";
 import logoIcon from "@/assets/logo-icon.png";
 import { useNavigate } from "react-router-dom";
 
