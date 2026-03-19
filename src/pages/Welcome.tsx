@@ -1,30 +1,29 @@
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
+import logoIcon from "@/assets/logo-icon.png";
+import appBackground from "@/assets/app-background.png";
 
 const Welcome = () => {
   const navigate = useNavigate();
 
   return (
     <div className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden px-6">
-      {/* Mesh gradient background */}
-      <div
-        className="absolute inset-0 -z-10"
-        style={{
-          background:
-            "radial-gradient(ellipse at 30% 20%, hsl(226 70% 55% / 0.08) 0%, transparent 50%), radial-gradient(ellipse at 70% 80%, hsl(210 20% 80% / 0.15) 0%, transparent 50%), hsl(210 20% 98%)",
-        }}
+      {/* Background image */}
+      <img
+        src={appBackground}
+        alt=""
+        className="absolute inset-0 w-full h-full object-cover -z-10 opacity-20"
       />
+      <div className="absolute inset-0 -z-10 bg-background/60" />
 
-      {/* Logo mark */}
+      {/* Logo */}
       <motion.div
         initial={{ opacity: 0, scale: 0.9 }}
         animate={{ opacity: 1, scale: 1 }}
         transition={{ duration: 0.5, ease: [0.2, 0, 0, 1] }}
         className="mb-8"
       >
-        <div className="w-10 h-10 rounded-lg bg-primary flex items-center justify-center">
-          <span className="text-primary-foreground font-display font-bold text-lg">M</span>
-        </div>
+        <img src={logoIcon} alt="YourPitch" className="w-16 h-16 rounded-2xl shadow-lg" />
       </motion.div>
 
       {/* Headline */}
@@ -56,13 +55,13 @@ const Welcome = () => {
       >
         <button
           onClick={() => navigate("/onboarding")}
-          className="px-6 py-3 rounded-lg bg-primary text-primary-foreground font-medium text-sm active:scale-[0.96] transition-transform"
+          className="px-6 py-3 rounded-xl bg-primary text-primary-foreground font-medium text-sm active:scale-[0.96] transition-transform shadow-lg"
         >
           Sign up
         </button>
         <button
           onClick={() => navigate("/onboarding")}
-          className="px-6 py-3 rounded-lg bg-card text-foreground font-medium text-sm active:scale-[0.96] transition-transform"
+          className="px-6 py-3 rounded-xl bg-card text-foreground font-medium text-sm active:scale-[0.96] transition-transform"
           style={{ boxShadow: "var(--momentum-shadow)" }}
         >
           Log in
