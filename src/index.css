@@ -8,6 +8,7 @@
 @layer base {
   :root {
     --background: 30 50% 97%;
+    --gradient-bg: linear-gradient(180deg, hsl(30 100% 90%) 0%, hsl(30 50% 97%) 40%, hsl(0 0% 100%) 100%);
     --foreground: 20 20% 12%;
 
     --card: 0 0% 100%;
@@ -59,7 +60,9 @@
   }
 
   body {
-    @apply bg-background text-foreground font-body antialiased;
+    @apply text-foreground font-body antialiased;
+    background: var(--gradient-bg);
+    min-height: 100vh;
   }
 
   h1, h2, h3, h4, h5, h6 {
