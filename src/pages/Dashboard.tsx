@@ -32,7 +32,8 @@ const Dashboard = () => {
   const [hoveredId, setHoveredId] = useState<string | null>(null);
 
   return (
-    <div className="min-h-screen px-6 py-12 max-w-4xl mx-auto">
+    <PageShell>
+    <div className="px-6 py-12 max-w-4xl mx-auto">
       <motion.div
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
