@@ -124,6 +124,7 @@ const Progress = () => {
         </div>
       </motion.div>
     </div>
+    </PageShell>
   );
 };
 
