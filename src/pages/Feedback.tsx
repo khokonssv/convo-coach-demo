@@ -174,6 +174,7 @@ const Feedback = () => {
         </div>
       </motion.div>
     </div>
+    </PageShell>
   );
 };
 

@@ -59,6 +59,7 @@ const Future = () => {
         </div>
       </motion.div>
     </div>
+    </PageShell>
   );
 };
 

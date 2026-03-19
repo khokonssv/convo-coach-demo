@@ -98,6 +98,7 @@ const Onboarding = () => {
         )}
       </div>
     </div>
+    </PageShell>
   );
 };
 

@@ -72,6 +72,7 @@ const Simulation = () => {
         </div>
       </motion.div>
     </div>
+    </PageShell>
   );
 };
 
