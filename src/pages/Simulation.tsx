@@ -14,7 +14,8 @@ const Simulation = () => {
   };
 
   return (
-    <div className="min-h-screen flex flex-col px-6 py-12 max-w-3xl mx-auto">
+    <PageShell>
+    <div className="flex flex-col px-6 py-12 max-w-3xl mx-auto min-h-[calc(100vh-52px)]">
       <motion.div
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
