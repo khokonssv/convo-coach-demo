@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import sunCharacter from "@/assets/sun-character.png";
+import PageShell from "@/components/PageShell";
 
 const AnimatedNumber = ({ value }: { value: number }) => {
   const [current, setCurrent] = useState(0);
@@ -31,7 +32,8 @@ const Dashboard = () => {
   const [hoveredId, setHoveredId] = useState<string | null>(null);
 
   return (
-    <div className="min-h-screen px-6 py-12 max-w-4xl mx-auto">
+    <PageShell>
+    <div className="px-6 py-12 max-w-4xl mx-auto">
       <motion.div
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
@@ -107,6 +109,7 @@ const Dashboard = () => {
         </div>
       </motion.div>
     </div>
+    </PageShell>
   );
 };
 

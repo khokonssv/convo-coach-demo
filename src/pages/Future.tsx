@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
+import PageShell from "@/components/PageShell";
 
 const modules = [
   { label: "Fundraising Simulator", desc: "Pitch to virtual VCs and get scored" },
@@ -17,7 +18,8 @@ const Future = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen px-6 py-12 max-w-4xl mx-auto">
+    <PageShell>
+    <div className="px-6 py-12 max-w-4xl mx-auto">
       <motion.div
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
@@ -57,6 +59,7 @@ const Future = () => {
         </div>
       </motion.div>
     </div>
+    </PageShell>
   );
 };
 

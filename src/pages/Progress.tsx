@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import { LineChart, Line, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer, RadarChart, PolarGrid, PolarAngleAxis, Radar } from "recharts";
+import PageShell from "@/components/PageShell";
 
 const lineData = [
   { week: "W1", score: 52 },
@@ -33,7 +34,8 @@ const Progress = () => {
   const navigate = useNavigate();
 
   return (
-    <div className="min-h-screen px-6 py-12 max-w-4xl mx-auto">
+    <PageShell>
+    <div className="px-6 py-12 max-w-4xl mx-auto">
       <motion.div
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
@@ -122,6 +124,7 @@ const Progress = () => {
         </div>
       </motion.div>
     </div>
+    </PageShell>
   );
 };
 

@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
+import PageShell from "@/components/PageShell";
 
 const scenarios = [
   { id: "interview", label: "Interview", icon: "🎯" },
@@ -20,7 +21,8 @@ const Onboarding = () => {
   const [step, setStep] = useState(1);
 
   return (
-    <div className="min-h-screen flex items-center justify-center px-6 py-16">
+    <PageShell>
+    <div className="flex items-center justify-center px-6 py-16 min-h-[calc(100vh-52px)]">
       <div className="w-full max-w-lg">
         {step === 1 && (
           <motion.div
@@ -96,6 +98,7 @@ const Onboarding = () => {
         )}
       </div>
     </div>
+    </PageShell>
   );
 };
 
