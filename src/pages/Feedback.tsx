@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
+import PageShell from "@/components/PageShell";
 
 const AnimatedScore = ({ value, delay = 0 }: { value: number; delay?: number }) => {
   const [current, setCurrent] = useState(0);
