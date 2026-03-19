@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
 import sunCharacter from "@/assets/sun-character.png";
+import PageShell from "@/components/PageShell";
 
 const AnimatedNumber = ({ value }: { value: number }) => {
   const [current, setCurrent] = useState(0);
