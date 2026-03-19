@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
+import PageShell from "@/components/PageShell";
 
 const modules = [
   { label: "Fundraising Simulator", desc: "Pitch to virtual VCs and get scored" },
